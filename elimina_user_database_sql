@@ -3,8 +3,8 @@
 # Un modo corretto di operare, quindi, consiste nel rimuovere pirma tutti i permessi dell’utente e cancellarlo solo dopo aver fatto ciò.
 # Quindi, per prima cosa utiliziamo:
 
-# 1) revoca dei permessi per l utente centauri
-# 2)  cancellazione utente centauri
+# 1) REVOCA DEI PERMESSI PER L UTENTE CENTAURI
+# 2) CANCELLAZIONE UTENTE CENTAURI
 # https://santogoogle.wordpress.com/database/comandi-mysql/cancellare-un-utente-da-mysql/
 
 REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'centauri'@'localhost';

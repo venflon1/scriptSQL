@@ -1,9 +1,11 @@
+# 0) SELEZIONA DATABASE SU CUI OPERARE
 # 1) INSERIMENTO NUOVO USER
 # 1) INSERIMENTO NUOVO USER
 # 2) INSERIMENTO NUOVO USER 
 # 3) VISUALIZZO TUTTI GLI USER DELLA TABELLA USERS
 # 4) VISUALIZZO TUTTI GLI i NOMI E COGNOMI CHE HANNO ALMENO UN FIGLIO E SONO OCCUPATI
 
+USE centauri_db;
 INSERT INTO USER(nome, cognome, data_nascita, sesso, occupato) VALUES('pippino', 'il breve', '1990-10-11', 'M', TRUE);
 INSERT INTO USER(nome, cognome, data_nascita, sesso, occupato) VALUES('peppa', 'pig', '1910-12-11', 'F', TRUE);
 INSERT INTO USER(nome, cognome, data_nascita, sesso, occupato, n_figli) VALUES('peppa', 'pig', '1310-10-12', 'F', TRUE, 2);
