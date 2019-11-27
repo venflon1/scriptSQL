@@ -1,0 +1,12 @@
+# Attraverso il comando DROP USER è possibile rimuovere un utente da MySQL: è bene precisare, 
+# tuttavia, che questo comando rimuove l’utente ma non i suoi permessi.
+# Un modo corretto di operare, quindi, consiste nel rimuovere pirma tutti i permessi dell’utente e cancellarlo solo dopo aver fatto ciò.
+# Quindi, per prima cosa utiliziamo:
+
+# 1) revoca dei permessi per l utente centauri
+# 2)  cancellazione utente centauri
+# https://santogoogle.wordpress.com/database/comandi-mysql/cancellare-un-utente-da-mysql/
+
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'centauri'@'localhost';
+FLUSH PRIVILEGES;
+DROP USER 'centauri'@'localhost';
