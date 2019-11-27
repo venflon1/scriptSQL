@@ -6,10 +6,14 @@
 USE centauri_db;
 	CREATE TABLE USER(
 	nome VARCHAR(55),
-	cogonme VARCHAR(55),
+	cognome VARCHAR(55),
 	data_nascita DATE,
 	sesso CHAR,
 	occupato BOOLEAN
 );
 SHOW TABLES;
+DESCRIBE USER;
+ALTER TABLE USER add column id int primary key auto_increment;
+DESCRIBE USER;
+ALTER TABLE USER add column n_figli int default 0;
 DESCRIBE USER;

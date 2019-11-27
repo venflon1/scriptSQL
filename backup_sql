@@ -1,0 +1,71 @@
+# 1) CREAZIONE DATABASE 
+# 2) SELEZIONO DATABASE SU CUI OPERARE
+# 2) CREAZIONE DI UNA NUOVA UTENZA MYSQL
+# 3) ASSEGNAZIONE PROVILEGI DATABASE CREATO NEL PUNTO 1 PER L UTENZA CREATA AL PUNTO 2
+# https://www.tosolini.info/2015/10/mysql-creare-utentedb-e-assegnare-permessi-da-command-line/
+# http://staff.rcost.unisannio.it/visaggio/MySQL_05_06_2007.pdf
+
+CREATE DATABASE centauri_db;
+USE centauri_db;
+SHOW DATABASES;
+CREATE USER 'centauri'@'localhost' IDENTIFIED BY 'centauri';
+GRANT ALL ON centauri_db.* TO 'centauri'@'localhost';
+FLUSH PRIVILEGES;
+#====================================================================================================================================================
+
+# 1) SELEZIONO DATABASE DOVE OPERARE
+# 2) CREAZIONE DI UNA TABELLA UTENTE CON 5 CAMPI.
+# 3) VISUALIZZO LE TABELLE APPARTENENTI AL DATABASE SELEZIONATO AL PUNTO 1)
+# 4) VISUALIZZO LA STRUTTURA DELLA TABELLA
+# 5) MODIFICO LA STRUTTURA DELLA TABELLA, INSERENDO UN NUOVO CAMPO (colonna) 
+# 6) VISUALIZZO LA STRUTTURA DELLA TABELLA
+# 7) MODIFICO LA STRUTTURA DELLA TABELLA, INSERENDO UN NUOVO CAMPO (colonna)
+# 8) VISUALIZZO LA STRUTTURA DELLA TABELLA
+
+USE centauri_db;
+CREATE TABLE USER(
+	nome VARCHAR(55),
+	cognome VARCHAR(55),
+	data_nascita DATE,
+	sesso CHAR,
+	occupato BOOLEAN
+);
+SHOW TABLES;
+DESCRIBE USER;
+ALTER TABLE USER add column id int primary key auto_increment;
+DESCRIBE USER;
+ALTER TABLE USER add column n_figli int default 0;
+DESCRIBE USER;
+#====================================================================================================================================================
+
+# 1) INSERIMENTO NUOVO USER
+# 2) INSERIMENTO NUOVO USER 
+# 3) INSERIMENTO NUOVO USER
+# 4) INSERIMENTO NUOVO USER 
+# 5) INSERIMENTO NUOVO USER
+# 6) VISUALIZZO TUTTI GLI USER DELLA TABELLA USERS
+# 7) VISUALIZZO TUTTI GLI i NOMI E COGNOMI CHE HANNO ALMENO UN FIGLIO E SONO OCCUPATI
+
+INSERT INTO USER(nome, cognome, data_nascita, sesso, occupato) VALUES('pippino', 'il breve', '1990-10-11', 'M', TRUE);
+INSERT INTO USER(nome, cognome, data_nascita, sesso, occupato) VALUES('peppa', 'pig', '1910-12-11', 'F', TRUE);
+INSERT INTO USER(nome, cognome, data_nascita, sesso, occupato, n_figli) VALUES('peppa', 'pig', '1310-10-12', 'F', TRUE, 2);
+INSERT INTO USER(nome, cognome, data_nascita, sesso, occupato, n_figli) VALUES('peppa', 'pig', '1410-11-11', 'F', FALSE, 2);
+INSERT INTO USER(nome, cognome, data_nascita, sesso, occupato, n_figli) VALUES('peppa', 'pig', '1990-10-11', 'F', TRUE, 3);
+
+SELECT * FROM USER;
+SELECT * FROM USER WHERE n_figli > 0 AND occupato = 1;
+#====================================================================================================================================================
+
+# 1) CANCELLO TABELLA USER
+# 2) MOSTRO TUTTE LE TABELLE DEL DATABASE USER
+
+DROP TABLE USER;
+SHOW TABLES;
+#====================================================================================================================================================
+
+# 1) REVOCA DEI PERMESSI PER L UTENTE centauri
+# 2) CANCELLAZIONE UTENTE CENTAURI
+
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'centauri'@'localhost';
+FLUSH PRIVILEGES;
+DROP USER 'centauri'@'localhost';

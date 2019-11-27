@@ -1,0 +1,11 @@
+# ELIMINAZIONE TABELLA USER
+
+# 1) imposto centauri_db come database su cui operare
+# 2) mostro tutte le tabelle del database centauri_db
+# 3) cancello tabella USER
+# 4) mostro tutte le tabelle del dtatabase centauri_db
+
+USE centauri_db;
+SHOW TABLES;
+DROP TABLE USER;
+SHOW TABLES;

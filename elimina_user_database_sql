@@ -10,3 +10,4 @@
 REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'centauri'@'localhost';
 FLUSH PRIVILEGES;
 DROP USER 'centauri'@'localhost';
+
