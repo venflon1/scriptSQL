@@ -1,0 +1,7 @@
+# 1) revoca dei permessi all utente per quel db
+# https://santogoogle.wordpress.com/database/comandi-mysql/cancellare-un-utente-da-mysql/
+
+REVOKE ALL PRIVILEGES, GRANT OPTION
+FROM 'centauri'@'localhost'
+SHOW GRANTS FOR 'centauri'@'localhost';
+FLUSH PRIVILEGES;
