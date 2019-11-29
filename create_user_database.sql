@@ -4,7 +4,7 @@
 # https://www.tosolini.info/2015/10/mysql-creare-utentedb-e-assegnare-permessi-da-command-line/
 # https://www.mrwebmaster.it/mysql/gestire-utenti-permessi-grant-revoke_7041.html
 
-CREATE DATABASE centauri_db;
+CREATE DATABASE pippo_db;
 SHOW DATABASES;
 CREATE USER 'centauri'@'localhost' IDENTIFIED BY 'centauri';
 GRANT ALL ON centauri_db.* TO 'centauri'@'localhost';
